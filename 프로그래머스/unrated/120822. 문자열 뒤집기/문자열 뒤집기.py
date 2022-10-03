@@ -1,4 +1,2 @@
 def solution(my_string):
-    result = [string for string in my_string ]
-    result.reverse()
-    return "".join(result)
+    return my_string[::-1]
