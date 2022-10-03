@@ -1,2 +1,2 @@
 def solution(message):
-    return len(list(map(str, message))) * 2
+    return len(message) * 2
