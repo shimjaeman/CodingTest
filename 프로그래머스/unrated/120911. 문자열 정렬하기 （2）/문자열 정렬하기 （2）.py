@@ -1,5 +1,2 @@
 def solution(my_string):
-    my_string = my_string.lower()
-    string = [i for i in my_string]
-    string.sort()
-    return "".join(string)
+    return "".join(sorted(list(my_string.lower())))
