@@ -1,14 +1,10 @@
 def solution(n):
-    res = 0
-    s = 1
-    d = 1
-    while s <= n:
-        temp = s
-        while temp <= n:
-            if temp == n:
-                res += 1
-                break
-            temp += d
-        d += 1
-        s += d
-    return res
+    answer = 0
+    for i in range(1, n+1):
+        s = 0
+        while s < n:
+            s += i
+            i += 1
+        if s == n:
+            answer +=1
+    return answer
