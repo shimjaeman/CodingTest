@@ -1,6 +1,6 @@
 def solution(n, lost, reserve):
-    lost_a = sorted([n for n in lost if n not in reserve])
-    reserve_a = sorted([a for a in reserve if a not in lost])
+    lost_a = sorted(set(lost) - set(reserve))
+    reserve_a = sorted(set(reserve) - set(lost))
     for j in reserve_a :
         left = j-1
         right = j+1
