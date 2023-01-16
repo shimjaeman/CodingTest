@@ -5,9 +5,9 @@ def solution(nums):
     for i in combinations(nums, 3):
         sum_num = sum(i) 
         count = 0
-        for j in range(2, sum_num+1):
+        for j in range(2, int(sum_num//2)+1):
             if sum_num % j == 0:
-                count +=1 
-        if count == 1:
+                break
+        else:
             result+=1
     return result
