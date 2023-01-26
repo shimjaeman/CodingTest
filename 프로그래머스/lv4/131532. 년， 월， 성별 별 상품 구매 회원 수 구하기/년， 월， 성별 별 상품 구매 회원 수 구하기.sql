@@ -1,0 +1,13 @@
+-- 코드를 입력하세요
+-- 년, 월, 성별 별로 상품을 구매한 회원수를 집계
+-- 결과는 년, 월, 성별을 기준으로 오름차순 정렬
+-- 이때, 성별 정보가 없는 경우 결과에서 제외
+SELECT DATE_FORMAT(OS.SALES_DATE, "%Y") AS "YEAR", 
+       DATE_FORMAT(OS.SALES_DATE, "%m") AS "MONTH",
+       UI.GENDER,
+       COUNT(DISTINCT OS.USER_ID) AS USERS
+FROM ONLINE_SALE OS LEFT JOIN USER_INFO UI
+ON UI.USER_ID = OS.USER_ID
+GROUP BY YEAR, MONTH, UI.GENDER
+HAVING UI.GENDER IS NOT NULL
+ORDER BY YEAR, MONTH, GENDER;
